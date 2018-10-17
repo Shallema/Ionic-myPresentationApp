@@ -29,7 +29,7 @@ export class AboutPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AboutPage');
-
+    //loc en dur
     /*this.openweatherProvider.forecast(40.7109945, -74.004355).subscribe((json) => {
       this.weatherData = json;
       console.log(this.weatherData);
