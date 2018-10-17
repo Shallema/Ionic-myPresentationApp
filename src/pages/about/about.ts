@@ -50,7 +50,7 @@ export class AboutPage {
 
   formateDate(str: string): string {
     let dateMoment = moment(str);
-    return dateMoment.format("dddd hh:mm");
+    return dateMoment.format("dddd HH:mm");
   }
 
 }
