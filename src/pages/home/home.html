@@ -8,11 +8,47 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+  <h2>Sandrine Hallemans</h2>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+  <h3>
+    Mobile App Developer
+  </h3>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+  <ion-grid>
+
+      <ion-row>
+        
+        <ion-col col-6 (click)="display('skills')">
+            <div ><ion-icon name="link"></ion-icon></div>
+            <div>Skills</div>
+        </ion-col>
+        <ion-col col-6 (click)="display('studies')">
+          <div ><ion-icon name="bookmarks"></ion-icon></div>
+          <div>Studies</div>
+        </ion-col>
+
+        <ion-col col-6 (click)="display('skills')">
+            <div ><ion-icon name="link"></ion-icon></div>
+            <div>Experience</div>
+        </ion-col>
+        <ion-col col-6 (click)="display('studies')">
+          <div ><ion-icon name="bookmarks"></ion-icon></div>
+          <div>Hobbies</div>
+        </ion-col>
+
+          <ion-col col-6 (click)="display('skills')">
+              <div ><ion-icon name="link"></ion-icon></div>
+              <div>Skills</div>
+          </ion-col>
+          <ion-col col-6 (click)="display('studies')">
+            <div ><ion-icon name="bookmarks"></ion-icon></div>
+            <div>Studies</div>
+          </ion-col>
+        </ion-row>
+   
+    </ion-grid>
+
+  
+  
+  
 </ion-content>
