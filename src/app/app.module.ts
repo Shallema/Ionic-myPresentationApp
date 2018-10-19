@@ -13,10 +13,22 @@ import { StudiesPageModule } from '../pages/studies/studies.module';
 import { StudiesPage } from '../pages/studies/studies';
 import { TabsPage } from '../pages/tabs/tabs';
 import { AboutPage } from '../pages/about/about';
+import { DemoPage } from '../pages/demo/demo';
+import { DemoApiwheatherPage } from '../pages/demo-apiwheather/demo-apiwheather';
+import { DemoGeolocPage } from '../pages/demo-geoloc/demo-geoloc';
+import { DemoSafarivcPage } from '../pages/demo-safarivc/demo-safarivc'
+import { DemoEmailcomposerPage } from '../pages/demo-emailcomposer/demo-emailcomposer';
+import { DemoApirailPage } from '../pages/demo-apirail/demo-apirail';
+import { StationListresultPage } from '../pages/station-listresult/station-listresult';
 
 import { Geolocation } from '@ionic-native/geolocation';
 import { OpenWeatherProvider } from '../providers/open-weather/open-weather';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { SafariViewController } from '@ionic-native/safari-view-controller';
+import { EmailComposer } from '@ionic-native/email-composer';
+import { IrailProvider } from '../providers/irail/irail';
+import { FileOpener } from '@ionic-native/file-opener';
+import { DocumentViewer } from '@ionic-native/document-viewer';
 
 
 @NgModule({
@@ -24,15 +36,22 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
     MyApp,
     HomePage,
     TabsPage,
-    AboutPage
-
+    AboutPage,
+    DemoPage,
+    DemoApiwheatherPage,
+    DemoGeolocPage,
+    DemoSafarivcPage,
+    DemoEmailcomposerPage,
+    DemoApirailPage,
+    StationListresultPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     SkillsPageModule, 
     StudiesPageModule, 
-    HttpClientModule
+    HttpClientModule,
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -41,7 +60,14 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
     SkillsPage,
     StudiesPage,
     TabsPage,
-    AboutPage
+    AboutPage,
+    DemoPage,
+    DemoApiwheatherPage,
+    DemoGeolocPage,
+    DemoSafarivcPage,
+    DemoEmailcomposerPage,
+    DemoApirailPage,
+    StationListresultPage
   ],
   providers: [
     StatusBar,
@@ -49,8 +75,12 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Geolocation,
     OpenWeatherProvider,
-    HttpClient
-    
+    HttpClient,
+    SafariViewController,
+    EmailComposer,
+    IrailProvider,
+    FileOpener,
+    DocumentViewer   
   ]
 })
 export class AppModule {}

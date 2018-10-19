@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Geolocation } from '@ionic-native/geolocation'
-import { OpenWeatherProvider } from '../../providers/open-weather/open-weather';
-
-import * as moment from 'moment';
+import { FileOpener } from '@ionic-native/file-opener';
+import { DocumentViewer, DocumentViewerOptions } from '@ionic-native/document-viewer';
 
 /**
  * Generated class for the AboutPage page.
@@ -19,38 +17,20 @@ import * as moment from 'moment';
 })
 export class AboutPage {
 
-  lat: any;
-  lng: any;
-
-  weatherData: object;
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, public geolocation: Geolocation, private openweatherProvider: OpenWeatherProvider) {
-  }
+  constructor(public navCtrl: NavController, 
+                public navParams: NavParams, 
+                  private fileOpener: FileOpener,
+                    private document: DocumentViewer) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AboutPage');
-    //loc en dur
-    /*this.openweatherProvider.forecast(40.7109945, -74.004355).subscribe((json) => {
-      this.weatherData = json;
-      console.log(this.weatherData);
-    });*/
 
-    this.geolocation.getCurrentPosition().then((resp) => {
-      this.lat = resp.coords.latitude;
-      this.lng = resp.coords.longitude;
-      this.openweatherProvider.forecast(this.lat, this.lng).subscribe((json) => {
-        this.weatherData = json;
-        console.log(this.weatherData);
-      })
-    }).catch((error) => {
-      console.log('Error getting location', error);
-    });
+    const options: DocumentViewerOptions = {
+      title: 'My CV'
+    }
+    
+    this.document.viewDocument('assets/cv.pdf', 'application/pdf', options)
 
-  }
-
-  formateDate(str: string): string {
-    let dateMoment = moment(str);
-    return dateMoment.format("dddd HH:mm");
   }
 
 }
